@@ -21,3 +21,19 @@ How to use cloud-init to customize a Linux virtual machine in Azure on first boo
 
 Create bootstrap actions to install additional software
 * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html
+
+# Notes
+
+1. I created a VM with the Azure CLI using the following commands
+'az group create --name RG01 --location eastus'
+az vm create --resource-group Rg01 --name VM01 --image ubuntults --admin-username 
+dollypee --generate-ssh-keys'
+2. To connect to the Apache2 Web server, I used the following commands 
+'az vm open-port --port 80 --resource-groupRG01 --name VM01' 
+'ssh dollypee@20.127.38.189'   
+'sudo apt-get -y update && sudo apt-get -y install Apache2'
+3. To start the service status: We use the command  'az vm start -g NewResourceGroup -n NewVM'
+
+4. To investigate the service status: W use the command 'az vm show --resource-group RG1 --name VM1'
+
+5. To stop the service: ' az vm stop --resource-group RG1 --name VM1'
