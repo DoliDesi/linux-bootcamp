@@ -20,3 +20,20 @@ Build and run a web application with the MEAN stack on an Azure Linux virtual ma
 
 MEAN Stack App
 * https://github.com/MicrosoftDocs/mslearn-build-a-web-app-with-mean-on-a-linux-vm
+
+
+
+## LAMP-STACK on an Azure Linux VM
+### What is a LAMP-STACK? A LAMP-STACK is LAMP on an open source Web development platform that uses *Linux* as the operating system, *Apache* as the Web server, *MySQL* as the relational database management system and *PHP* as the object-oriented scripting language. (Sometimes *Perl* or *Python* is used instead of PHP.)      
+1. To create a resource group, we use the command *'az group create --name LAMP-STACK-RG --location westus2'*
+2. To create a virtual machine, we use the command *'az vm create --resource-group LAMP-STACK-RG --name WEB-SRV-01 --image UbuntuLTS --admin-username azureuser --generate-ssh-keys'*
+3.  We open port 80 with the command *'az vm open-port --port 80 --resource-group LAMP-STACK-RG --name WEB-SRV-001'*
+4. To ssh into our VM *'ssh azureuser@20.69.166.155"*
+5. To install Apache,MySQL and PHP
+- sudo apt-get -y update && sudo apt-get install lamp-server^ -y
+- we check the version of the Apache installation with the command *apache2 -v*
+- sudo mysql_secure_installation
+- we check the version of the MySQL with *apache2 -v*
+- sudo mysql -u root -p
+- we verify the version of the PHP with *php -v*
+6.  To install the WordPress, we use the command 'sudo apt install wordpress-y'
