@@ -40,10 +40,10 @@ We open an amazon EC2 console and click on the launch instance tab to create and
 
 
 # 3. Opening port 80 for Web traffic
-Opening port 80 for web traffic means that the site is open to the public for viewing, normally it is not open until you decide to make it piblic. To do this, I opened the security group -- Inbound rule -- Edit inbound rule-- Add HTTP -- save changes.
+Opening port 80 for web traffic means that the site is open to the public for viewing, normally it is not open until you decide to make it public. To do this, I opened the security group -- Inbound rule -- Edit inbound rule-- Add HTTP -- save changes.
 
 # 4. Connect to Virtual Machine
-I used the Git bash terminal to locate where my key was. I made sure I was in the location my key was saved into in other to ssh successfully. I then changed mode i.e 'chmod 400 aws-linux.pem' 
+I used the EC2 Instance Connect to connect my instance. To achieve this I had to go to the AWS General Reference to download the AWS IP Address ranges. I then located the IP Address under the EC2 Instance Connect to my specific region 'us east2' which is  '3.16.146.0/29'. I made some changes in my Inbound rule and saved. 
 
 # 5. Install web server
 To install the Apache2 web server, I ran the commands below
